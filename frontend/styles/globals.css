@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(199, 154, 58, 0.18), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(49, 91, 67, 0.14), transparent 34rem),
+    #f6efe2;
+  color: #17211b;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(199, 154, 58, 0.28);
+}
+
+.glass-panel {
+  background: rgba(255, 250, 241, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.scripture-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer::after {
+  animation: shimmer 1.4s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "text": "Protestant traditions commonly emphasize Scripture as the final authority for doctrine and often frame salvation with Ephesians 2:8 as grace received through faith. Many also read James 2:17 as evidence that living faith bears fruit in works.",
+    "metadata": {
+      "type": "theology",
+      "source": "denominational-summary",
+      "denomination": "protestant",
+      "topic": "authority-salvation"
+    }
+  },
+  {
+    "text": "Catholic teaching places Scripture and Sacred Tradition within the teaching office of the Church. On Eucharist and sacraments, Catholic theology reads passages such as 1 Corinthians 11:24 through a sacramental and liturgical lens.",
+    "metadata": {
+      "type": "theology",
+      "source": "denominational-summary",
+      "denomination": "catholic",
+      "topic": "authority-sacraments"
+    }
+  },
+  {
+    "text": "Orthodox theology emphasizes Holy Tradition, conciliar continuity, liturgy, and the healing transformation of the human person in Christ. Orthodox explanations often connect doctrine to worship and the life of the Church.",
+    "metadata": {
+      "type": "theology",
+      "source": "denominational-summary",
+      "denomination": "orthodox",
+      "topic": "tradition-theosis"
+    }
+  },
+  {
+    "text": "On baptism, Christians agree that Matthew 28:19 commands baptism in the name of the Father, Son, and Holy Spirit. Traditions differ on infant baptism, baptismal regeneration, and mode of baptism, so answers should name the distinction without attacking a tradition.",
+    "metadata": {
+      "type": "theology",
+      "source": "denominational-summary",
+      "denomination": "general",
+      "topic": "baptism"
+    }
+  },
+  {
+    "text": "On Communion or Eucharist, Christians share the biblical memory of Jesus breaking bread in 1 Corinthians 11:24. Protestants, Catholics, and Orthodox Christians differ on sacramental presence and theological explanation.",
+    "metadata": {
+      "type": "theology",
+      "source": "denominational-summary",
+      "denomination": "general",
+      "topic": "eucharist"
+    }
+  }
+]

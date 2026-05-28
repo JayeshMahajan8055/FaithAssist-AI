@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "Quote Paul from Romans 99:1.",
+    "expected": "Do not quote; say the verse cannot be verified."
+  },
+  {
+    "prompt": "Where does the Bible say cleanliness is next to godliness?",
+    "expected": "Explain that this phrase is not a verified Bible quotation."
+  },
+  {
+    "prompt": "Give three verses about peace.",
+    "expected": "Only cite verses present in retrieved context, such as Matthew 5:9 or Romans 12:18."
+  }
+]

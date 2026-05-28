@@ -1,0 +1,121 @@
+[
+  {
+    "book": "Genesis",
+    "chapter": 1,
+    "verse": 1,
+    "text": "In the beginning, God created the heavens and the earth.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Genesis",
+    "chapter": 6,
+    "verse": 14,
+    "text": "Make a ship of gopher wood. You shall make rooms in the ship, and shall seal it inside and outside with pitch.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Psalm",
+    "chapter": 23,
+    "verse": 1,
+    "text": "Yahweh is my shepherd: I shall lack nothing.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Psalm",
+    "chapter": 23,
+    "verse": 4,
+    "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Matthew",
+    "chapter": 5,
+    "verse": 9,
+    "text": "Blessed are the peacemakers, for they shall be called children of God.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Matthew",
+    "chapter": 6,
+    "verse": 9,
+    "text": "Pray like this: 'Our Father in heaven, may your name be kept holy.'",
+    "translation": "WEB"
+  },
+  {
+    "book": "Matthew",
+    "chapter": 28,
+    "verse": 19,
+    "text": "Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.",
+    "translation": "WEB"
+  },
+  {
+    "book": "John",
+    "chapter": 3,
+    "verse": 16,
+    "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+    "translation": "WEB"
+  },
+  {
+    "book": "John",
+    "chapter": 13,
+    "verse": 34,
+    "text": "A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another.",
+    "translation": "WEB"
+  },
+  {
+    "book": "John",
+    "chapter": 14,
+    "verse": 6,
+    "text": "Jesus said to him, 'I am the way, the truth, and the life. No one comes to the Father, except through me.'",
+    "translation": "WEB"
+  },
+  {
+    "book": "Acts",
+    "chapter": 2,
+    "verse": 42,
+    "text": "They continued steadfastly in the apostles' teaching and fellowship, in the breaking of bread, and prayer.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Romans",
+    "chapter": 3,
+    "verse": 23,
+    "text": "For all have sinned, and fall short of the glory of God.",
+    "translation": "WEB"
+  },
+  {
+    "book": "Romans",
+    "chapter": 12,
+    "verse": 18,
+    "text": "If it is possible, as much as it is up to you, be at peace with all men.",
+    "translation": "WEB"
+  },
+  {
+    "book": "1 Corinthians",
+    "chapter": 11,
+    "verse": 24,
+    "text": "When he had given thanks, he broke it and said, 'Take, eat. This is my body, which is broken for you. Do this in memory of me.'",
+    "translation": "WEB"
+  },
+  {
+    "book": "Ephesians",
+    "chapter": 2,
+    "verse": 8,
+    "text": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God.",
+    "translation": "WEB"
+  },
+  {
+    "book": "James",
+    "chapter": 2,
+    "verse": 17,
+    "text": "Even so faith, if it has no works, is dead in itself.",
+    "translation": "WEB"
+  },
+  {
+    "book": "1 John",
+    "chapter": 4,
+    "verse": 8,
+    "text": "He who doesn't love doesn't know God, for God is love.",
+    "translation": "WEB"
+  }
+]

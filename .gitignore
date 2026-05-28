@@ -1,0 +1,10 @@
+.env
+*.env
+!.env.example
+backend/faithassist.db
+backend/.chroma/
+frontend/.next/
+frontend/node_modules/
+__pycache__/
+*.py[cod]
+.venv/
