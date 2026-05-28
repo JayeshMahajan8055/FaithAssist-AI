@@ -1,4 +1,4 @@
-# 🌿 # FaithAssist AI
+# 🌿  FaithAssist AI
 
 A production-grade, scripture-grounded AI assistant designed for trustworthy Christian conversations, theological exploration, safety-aware response generation, and hallucination-resistant retrieval workflows.
 
