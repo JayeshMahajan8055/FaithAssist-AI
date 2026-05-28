@@ -143,54 +143,47 @@ Frontend Rendering
 ---
 
 # Architecture Overview
-
-```mermaid
 flowchart TD
-
-    %% Frontend
-    subgraph Frontend [Next.js Frontend]
-        UI[Chat Interface]
-        IMG[Image Generation Panel]
-        TESTS[Evaluation Test Suite]
+    %% Frontend Components
+    subgraph Frontend [Next.js React App]
+        UI[User Interface]
+        Sidebar[Suggested Tests Sidebar]
+        Chat[Persistent Chat Panel]
+        Image[Image Generation Panel]
     end
 
-    %% Backend
+    %% Backend Services
     subgraph Backend [FastAPI Backend]
-        API[API Gateway]
-        ORCH[Chat Orchestrator]
-        SAFE[Safety Moderation]
-        RAG[Retrieval Pipeline]
-        VALID[Scripture Validator]
+        API[API Router]
+        Orch[Chat Orchestrator]
+        Safety[Safety Moderation Layer]
+        RAG[LangChain RAG Retriever]
+        Val[Scripture Citation Validator]
     end
 
-    %% Data Layer
-    subgraph Data [Knowledge & Storage]
-        CHROMA[(ChromaDB Vector Store)]
-        SQLITE[(SQLite Scripture Database)]
+    %% Storage & APIs
+    subgraph Storage [Storage & External APIs]
+        Chroma[(ChromaDB Vector Store)]
+        SQLite[(SQLite Memory DB)]
+        Groq[LLM Provider - Groq/OpenAI]
+        Pollinations[Image Gen API - Pollinations]
     end
 
-    %% External Services
-    subgraph External [External Services]
-        LLM[Groq / OpenAI]
-        IMGAPI[Image Generation API]
-    end
-
-    UI --> API
-    IMG --> API
-    TESTS --> UI
-
-    API --> ORCH
-    ORCH --> SAFE
-    ORCH --> RAG
-    RAG --> CHROMA
-
-    ORCH --> LLM
-    ORCH --> VALID
-    VALID --> SQLITE
-
-    API --> UI
-    API --> IMGAPI
-```
+    %% Data Connections
+    UI -->|1. Submit Query| API
+    Sidebar -->|Select Pre-set| UI
+    API -->|2. Orchestrate| Orch
+    Orch -->|3. Validate Safety| Safety
+    Orch -->|4. Query Context| RAG
+    RAG -->|Semantic Search| Chroma
+    Orch -->|5. Generate Answer| Groq
+    Orch -->|6. Verify References| Val
+    Val -->|Database Match| SQLite
+    Orch -->|7. Persist History| SQLite
+    Orch -->|8. Structured Response| API
+    API -->|9. Render Markdown & Citations| Chat
+    Image -->|Generate Image Request| API
+    API -->|Call Image Provider| Pollinations
 
 ---
 
