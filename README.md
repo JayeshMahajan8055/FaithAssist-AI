@@ -15,56 +15,6 @@ FaithAssist AI is a premium, production-ready AI Assistant designed to provide g
 
 ---
 
-## 📐 System Architecture
-
-The following diagram illustrates the data flow from the user query through safety checks, retrieval, generation, citation verification, and frontend display:
-
-```mermaid
-flowchart TD
-    %% Frontend Components
-    subgraph Frontend [Next.js React App]
-        UI[User Interface]
-        Sidebar[Suggested Tests Sidebar]
-        Chat[Persistent Chat Panel]
-        Image[Image Generation Panel]
-    end
-
-    %% Backend Services
-    subgraph Backend [FastAPI Backend]
-        API[API Router]
-        Orch[Chat Orchestrator]
-        Safety[Safety Moderation Layer]
-        RAG[LangChain RAG Retriever]
-        Val[Scripture Citation Validator]
-    end
-
-    %% Storage & APIs
-    subgraph Storage [Storage & External APIs]
-        Chroma[(ChromaDB Vector Store)]
-        SQLite[(SQLite Memory DB)]
-        Groq[LLM Provider - Groq/OpenAI]
-        Pollinations[Image Gen API - Pollinations]
-    end
-
-    %% Data Connections
-    UI -->|1. Submit Query| API
-    Sidebar -->|Select Pre-set| UI
-    API -->|2. Orchestrate| Orch
-    Orch -->|3. Validate Safety| Safety
-    Orch -->|4. Query Context| RAG
-    RAG -->|Semantic Search| Chroma
-    Orch -->|5. Generate Answer| Groq
-    Orch -->|6. Verify References| Val
-    Val -->|Database Match| SQLite
-    Orch -->|7. Persist History| SQLite
-    Orch -->|8. Structured Response| API
-    API -->|9. Render Markdown & Citations| Chat
-    Image -->|Generate Image Request| API
-    API -->|Call Image Provider| Pollinations
-```
-
----
-
 ## 🛠️ Project Flow
 
 1.  **Safety Verification**: The backend parses incoming prompts to intercept and block requests for fabricated scriptures, hateful sermons, violent religious propaganda, and jailbreaks.
