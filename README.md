@@ -1,4 +1,4 @@
-# 🌿  FaithAssist AI
+# 🌿 FaithAssist AI
 
 A production-grade, scripture-grounded AI assistant designed for trustworthy Christian conversations, theological exploration, safety-aware response generation, and hallucination-resistant retrieval workflows.
 
@@ -6,7 +6,7 @@ FaithAssist AI combines Retrieval-Augmented Generation (RAG), citation verificat
 
 ---
 
-# Overview
+# 📖 Overview
 
 FaithAssist AI was developed to explore modern trustworthy AI engineering patterns within a theological and spiritually sensitive domain.
 
@@ -25,9 +25,9 @@ Rather than functioning as a generic chatbot, FaithAssist AI is intentionally ar
 
 ---
 
-# Core Capabilities
+# ✨ Core Capabilities
 
-## Scripture-Grounded Retrieval
+## 📚 Scripture-Grounded Retrieval
 
 FaithAssist AI retrieves relevant biblical passages and theological references before generating responses.
 
@@ -42,7 +42,7 @@ Key capabilities include:
 
 ---
 
-## Hallucination Prevention
+## 🛡️ Hallucination Prevention
 
 The system actively detects and prevents:
 
@@ -53,7 +53,7 @@ The system actively detects and prevents:
 
 All generated scripture references are validated against a local structured Bible database before being returned to the user.
 
-Example safeguards:
+### Example Safeguards
 
 | Input                                             | System Behavior                            |
 | ------------------------------------------------- | ------------------------------------------ |
@@ -63,7 +63,7 @@ Example safeguards:
 
 ---
 
-## AI Safety & Moderation
+## 🚫 AI Safety & Moderation
 
 FaithAssist AI includes a moderation layer designed to intercept:
 
@@ -77,7 +77,7 @@ The moderation pipeline emphasizes calm, respectful, and non-confrontational ref
 
 ---
 
-## Denomination-Aware Responses
+## ⛪ Denomination-Aware Responses
 
 The assistant supports nuanced explanations across Christian traditions including:
 
@@ -93,7 +93,7 @@ Responses are intentionally designed to:
 
 ---
 
-## Christian Image Generation
+## 🎨 Christian Image Generation
 
 FaithAssist AI includes a dedicated image generation workflow supporting:
 
@@ -107,20 +107,30 @@ All image prompts pass through moderation before generation.
 
 ---
 
-# System Architecture
+# 🏗️ System Architecture
 
-FaithAssist AI uses a layered architecture separating:
+FaithAssist AI follows a layered, retrieval-grounded architecture designed for trustworthy AI interactions, scripture verification, safety moderation, and explainable response generation.
+
+The system separates:
 
 * frontend interaction
 * orchestration logic
 * retrieval pipelines
-* moderation systems
+* moderation workflows
 * citation validation
-* storage services
+* persistent memory
+* external AI providers
+
+This architecture ensures responses remain:
+
+* grounded in verified context
+* resistant to hallucinations
+* transparent and explainable
+* safe for sensitive theological interactions
 
 ---
 
-# High-Level Request Flow
+# 🔄 High-Level Request Flow
 
 ```text
 User Query
@@ -142,201 +152,308 @@ Frontend Rendering
 
 ---
 
-# Architecture Overview
+# 📐 Architecture Overview
+
+```mermaid
 flowchart TD
-    %% Frontend Components
-    subgraph Frontend [Next.js React App]
-        UI[User Interface]
-        Sidebar[Suggested Tests Sidebar]
-        Chat[Persistent Chat Panel]
-        Image[Image Generation Panel]
+
+    %% =====================================
+    %% FRONTEND LAYER
+    %% =====================================
+    subgraph Frontend["🖥️ Next.js Frontend"]
+
+        UI["💬 Chat Interface"]
+        TESTS["🧪 Evaluation Test Suite"]
+        CHAT["📖 Persistent Chat Panel"]
+        IMG["🎨 Image Generation Panel"]
+
     end
 
-    %% Backend Services
-    subgraph Backend [FastAPI Backend]
-        API[API Router]
-        Orch[Chat Orchestrator]
-        Safety[Safety Moderation Layer]
-        RAG[LangChain RAG Retriever]
-        Val[Scripture Citation Validator]
+    %% =====================================
+    %% API LAYER
+    %% =====================================
+    subgraph API["⚡ FastAPI API Layer"]
+
+        ROUTER["🌐 API Gateway / Router"]
+
     end
 
-    %% Storage & APIs
-    subgraph Storage [Storage & External APIs]
-        Chroma[(ChromaDB Vector Store)]
-        SQLite[(SQLite Memory DB)]
-        Groq[LLM Provider - Groq/OpenAI]
-        Pollinations[Image Gen API - Pollinations]
+    %% =====================================
+    %% ORCHESTRATION LAYER
+    %% =====================================
+    subgraph Backend["🧠 AI Orchestration Layer"]
+
+        ORCH["🔀 Chat Orchestrator"]
+
+        SAFE["🛡️ Safety Moderation"]
+
+        RAG["📚 RAG Retrieval Pipeline"]
+
+        VALID["✔️ Scripture Citation Validator"]
+
+        MEMORY["🧠 Conversation Memory Manager"]
+
     end
 
-    %% Data Connections
-    UI -->|1. Submit Query| API
-    Sidebar -->|Select Pre-set| UI
-    API -->|2. Orchestrate| Orch
-    Orch -->|3. Validate Safety| Safety
-    Orch -->|4. Query Context| RAG
-    RAG -->|Semantic Search| Chroma
-    Orch -->|5. Generate Answer| Groq
-    Orch -->|6. Verify References| Val
-    Val -->|Database Match| SQLite
-    Orch -->|7. Persist History| SQLite
-    Orch -->|8. Structured Response| API
-    API -->|9. Render Markdown & Citations| Chat
-    Image -->|Generate Image Request| API
-    API -->|Call Image Provider| Pollinations
+    %% =====================================
+    %% STORAGE LAYER
+    %% =====================================
+    subgraph Storage["🗄️ Knowledge & Storage Layer"]
+
+        CHROMA[("📦 ChromaDB Vector Store")]
+
+        SQLITE[("🗃️ SQLite Scripture & Session DB")]
+
+    end
+
+    %% =====================================
+    %% EXTERNAL SERVICES
+    %% =====================================
+    subgraph External["☁️ External AI Services"]
+
+        LLM["🤖 Groq / OpenAI LLM"]
+
+        IMAGEAPI["🖼️ Image Generation API"]
+
+    end
+
+    %% =====================================
+    %% FRONTEND FLOW
+    %% =====================================
+
+    TESTS -->|"Select Test Prompt"| UI
+
+    UI -->|"Submit User Query"| ROUTER
+
+    IMG -->|"Generate Christian Image"| ROUTER
+
+    %% =====================================
+    %% API FLOW
+    %% =====================================
+
+    ROUTER -->|"Route Request"| ORCH
+
+    %% =====================================
+    %% SAFETY FLOW
+    %% =====================================
+
+    ORCH -->|"Moderation Check"| SAFE
+
+    %% =====================================
+    %% MEMORY FLOW
+    %% =====================================
+
+    ORCH -->|"Load Session Context"| MEMORY
+
+    MEMORY -->|"Persist Conversation History"| SQLITE
+
+    %% =====================================
+    %% RETRIEVAL FLOW
+    %% =====================================
+
+    ORCH -->|"Retrieve Context"| RAG
+
+    RAG -->|"Semantic Search"| CHROMA
+
+    %% =====================================
+    %% GENERATION FLOW
+    %% =====================================
+
+    ORCH -->|"Generate Grounded Response"| LLM
+
+    %% =====================================
+    %% VALIDATION FLOW
+    %% =====================================
+
+    ORCH -->|"Validate Citations"| VALID
+
+    VALID -->|"Verify Scripture References"| SQLITE
+
+    %% =====================================
+    %% STRUCTURED RESPONSE FLOW
+    %% =====================================
+
+    ORCH -->|"Structured Grounded Output"| ROUTER
+
+    ROUTER -->|"Render Markdown & Citations"| CHAT
+
+    %% =====================================
+    %% IMAGE WORKFLOW
+    %% =====================================
+
+    ROUTER -->|"Generate Moderated Image"| IMAGEAPI
+```
 
 ---
 
-# Technical Architecture
+# 🔍 End-to-End Request Lifecycle
 
-## Frontend Layer
+## 1. User Query Submission
 
-Built with:
+The user submits:
 
-* Next.js
-* React
-* TailwindCSS
-* TypeScript
+* scripture questions
+* devotional requests
+* denomination-aware queries
+* safety-sensitive prompts
+* Christian image generation requests
 
-Key responsibilities:
-
-* chat rendering
-* persistent UI state
-* structured scripture cards
-* source accordions
-* evaluation test suite
-* image generation workflows
+through the Next.js frontend interface.
 
 ---
 
-## Backend Layer
+## 2. Safety Moderation Layer
 
-Built with:
+Before any LLM interaction occurs, prompts pass through the Safety Moderation Layer.
 
-* FastAPI
-* LangChain
-* SQLite
+The moderation system detects:
+
+* hateful religious content
+* violent propaganda
+* fabricated scripture requests
+* manipulative theology prompts
+* unsafe image generation requests
+
+Unsafe prompts are intercepted before reaching downstream systems.
+
+---
+
+## 3. Retrieval-Augmented Generation (RAG)
+
+Safe prompts are processed through the retrieval pipeline.
+
+The retrieval engine:
+
+* converts queries into embeddings
+* performs semantic similarity search
+* retrieves relevant scripture passages
+* fetches theological references
+* reranks retrieved context
+* filters low-confidence matches
+
+The retrieval layer uses:
+
 * ChromaDB
-
-Key responsibilities:
-
-* orchestration
-* retrieval
-* moderation
-* citation verification
-* structured response formatting
+* semantic embeddings
+* keyword fallback search
+* contextual reranking
 
 ---
 
-## Retrieval Layer
+## 4. Grounded Response Generation
 
-The retrieval pipeline:
+Retrieved context is injected into the orchestration prompt before generation.
 
-* embeds user queries
-* performs semantic search
-* reranks relevant passages
-* prioritizes exact scripture matches
-* filters low-confidence context
+The orchestration layer instructs the LLM to:
 
-Retrieval sources include:
+* remain grounded in retrieved context
+* avoid unsupported claims
+* acknowledge uncertainty clearly
+* preserve respectful theological tone
+* prevent fabricated scripture generation
 
-* Bible translations
-* theological summaries
-* denomination-aware references
-* devotional content
+### Example Orchestration Rule
+
+```text
+Use only verified scripture and retrieved context.
+Do not hallucinate references.
+If uncertain, clearly state uncertainty.
+```
 
 ---
 
-## Citation Validation Layer
+## 5. Citation Verification
 
-The citation validator:
+Generated references are validated against the local structured scripture database.
 
-* extracts scripture references
-* verifies verse existence
-* validates wording consistency
-* detects fabricated references
+The Citation Validator:
+
+* extracts verse references
+* verifies scripture existence
+* checks wording consistency
+* detects fabricated citations
 * assigns grounding metadata
 
----
+If a citation cannot be verified:
 
-## Safety Pipeline
+* confidence is reduced
+* unsupported references are removed
+* uncertainty messaging is added
 
-The moderation system intercepts:
+### Example
 
-* hateful prompts
-* fabricated theology requests
-* violent religious propaganda
-* extremist content
-* unsafe image prompts
-
-Safety handling prioritizes:
-
-* calm refusals
-* respectful tone
-* non-confrontational redirection
+> “I could not confidently verify this verse.”
 
 ---
 
-# User Experience Design
+## 6. Persistent Conversation Memory
 
-FaithAssist AI was intentionally designed to feel:
+The Conversation Memory Manager stores:
 
-* calm
-* grounded
-* modern
-* trustworthy
-* spiritually respectful
-* AI-native
+* session history
+* recent interactions
+* denomination preferences
+* conversation continuity
+* UI state persistence
 
-The interface emphasizes:
+This enables contextual continuity across user sessions.
+
+---
+
+## 7. Structured Frontend Rendering
+
+Responses are rendered as structured UI components including:
+
+* summary cards
+* verified scripture panels
+* expandable source accordions
+* grounding indicators
+* moderation badges
+* confidence metadata
+
+The interface prioritizes:
 
 * readability
 * transparency
-* retrieval visibility
-* clean typography
-* structured information hierarchy
-
-Design inspiration includes:
-
-* ChatGPT
-* Claude
-* Perplexity
-* Linear
-* Notion AI
+* explainability
+* trust-oriented UX
 
 ---
 
-# Evaluation & Testing Framework
+# 🧪 Evaluation & Testing Framework
 
 FaithAssist AI includes a built-in evaluation suite for testing:
 
-## Scripture Retrieval
+## 📖 Scripture Retrieval
 
 * Emmaus Road
 * Psalm 23
 * Beatitudes
 * John 3:16
+* John 11:35
 
-## Hallucination Prevention
+## 🚫 Hallucination Prevention
 
 * Fake scripture references
 * Misquoted verses
 * Non-scriptural sayings
+* Fabricated chapter references
 
-## Denomination Handling
+## ⛪ Denomination Handling
 
 * Orthodox tradition
 * Church authority
 * Baptism differences
 * Communion theology
 
-## Safety Moderation
+## 🛡️ Safety Moderation
 
 * Violent theology prompts
 * Hate speech requests
 * Manipulative scripture rewrites
+* Religious propaganda
 
-## Image Generation
+## 🎨 Image Generation
 
 * Biblical illustrations
 * Devotional artwork
@@ -345,7 +462,7 @@ FaithAssist AI includes a built-in evaluation suite for testing:
 
 ---
 
-# Repository Structure
+# 📂 Repository Structure
 
 ```text
 FaithAssist-AI/
@@ -381,7 +498,7 @@ FaithAssist-AI/
 
 ---
 
-# Local Development Setup
+# ⚙️ Local Development Setup
 
 ## Backend Setup
 
@@ -425,7 +542,7 @@ http://localhost:3000
 
 ---
 
-# Environment Variables
+# 🔑 Environment Variables
 
 ## Backend
 
@@ -450,7 +567,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 ---
 
-# Data Sources
+# 📚 Data Sources
 
 FaithAssist AI uses:
 
@@ -462,7 +579,7 @@ FaithAssist AI uses:
 
 ---
 
-# Prompt Engineering Strategy
+# 🧠 Prompt Engineering Strategy
 
 The orchestration layer instructs the LLM to:
 
@@ -472,7 +589,7 @@ The orchestration layer instructs the LLM to:
 * maintain respectful theological tone
 * prevent fabricated scripture generation
 
-Example orchestration rule:
+### Example Prompt Rule
 
 ```text
 Use only verified scripture and retrieved context.
@@ -482,7 +599,7 @@ If uncertain, clearly state uncertainty.
 
 ---
 
-# Grounding & Explainability
+# 🔍 Grounding & Explainability
 
 Responses include:
 
@@ -501,7 +618,7 @@ The goal is to create:
 
 ---
 
-# Future Enhancements
+# 🚀 Future Enhancements
 
 Potential future improvements include:
 
@@ -516,7 +633,7 @@ Potential future improvements include:
 
 ---
 
-# Responsible AI Principles
+# 🛡️ Responsible AI Principles
 
 FaithAssist AI prioritizes:
 
@@ -536,7 +653,7 @@ The project intentionally favors:
 
 ---
 
-# Example Queries
+# 💡 Example Queries
 
 ## Scripture Retrieval
 
@@ -578,20 +695,22 @@ Create a peaceful Christian wallpaper with a cross at sunrise.
 
 ---
 
-# Tech Stack
+# 🧰 Tech Stack
 
-| Layer            | Technologies                |
-| ---------------- | --------------------------- |
-| Frontend         | Next.js, React, TailwindCSS |
-| Backend          | FastAPI, LangChain          |
-| Database         | SQLite                      |
-| Vector Store     | ChromaDB                    |
-| LLM Providers    | Groq, OpenAI                |
-| Image Generation | Pollinations / DALL·E       |
+| Layer            | Technologies                   |
+| ---------------- | ------------------------------ |
+| Frontend         | Next.js, React, TailwindCSS    |
+| Backend          | FastAPI, LangChain             |
+| Vector Store     | ChromaDB                       |
+| Database         | SQLite                         |
+| LLM Providers    | Groq, OpenAI                   |
+| Image Generation | Pollinations / DALL·E          |
+| Retrieval        | Semantic Embeddings + RAG      |
+| Validation       | Citation Verification Pipeline |
 
 ---
 
-# Conclusion
+# 📌 Conclusion
 
 FaithAssist AI was developed as an exploration of trustworthy AI system design within a spiritually sensitive domain.
 
