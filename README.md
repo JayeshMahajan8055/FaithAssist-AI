@@ -421,12 +421,12 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 | Layer            | Technologies                   |
 | ---------------- | ------------------------------ |
-| Frontend         | Next.js, React, TailwindCSS    |
+| Frontend         | Next.js, React                 |
 | Backend          | FastAPI, LangChain             |
 | Vector Store     | ChromaDB                       |
 | Database         | SQLite                         |
-| LLM Providers    | Groq, OpenAI                   |
-| Image Generation | Pollinations / DALL·E          |
+| LLM Providers    | Groq                           |
+| Image Generation | Pollinations                   |
 | Retrieval        | Semantic Embeddings + RAG      |
 | Validation       | Citation Verification Pipeline |
 
